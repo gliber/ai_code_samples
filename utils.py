@@ -2,7 +2,7 @@ import os
 import re
 import openai
 import llama_index.llms.azure_openai as llama_azure_openai
-import llama_index.agent.openai as llama_openai
+import llama_index.llms.openai as llama_openai
 
 USE_OPEN_AI_AZRUE = False
 
@@ -51,7 +51,7 @@ def llm_call(prompt: str, system_prompt: str = "You are an assitant", model="cla
     client = get_client()
     messages = [{"role": "system", "content" : system_prompt},{"role": "user", "content": prompt}]
     response = client.chat.completions.create(
-        model=os.getenv("AZ_OPENAI_LLM"),
+        model=get_model(),
         max_tokens=4096,
         messages=messages,
         temperature=0.1,
