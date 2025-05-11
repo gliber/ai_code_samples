@@ -1,0 +1,9 @@
+openai
+llama-index
+llama-index-core 
+llama-index-agent-openai
+llama-index-llms-azure-openai
+llama-index-memory-mem0
+llama-index-tools-yahoo-finance
+mem0ai
+pydantic
